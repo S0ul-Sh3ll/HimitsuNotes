@@ -58,53 +58,6 @@ Export or share a note as **Markdown**, **Plain text**, **HTML**, or a **JSON ba
 
 The free tier allows up to **10 active notes**. Creating the 11th prompts a one-time **Pro** unlock (₹511) that removes the cap forever.
 
-- Powered by **Google Play Billing** (a non-consumable, managed in-app product). Because the entitlement is tied to the buyer’s Google account, Pro **restores automatically after a reinstall or on a new phone** — there’s also a manual **Restore purchase** button.
-- A cached flag lets Pro keep working offline once Play has confirmed the purchase at least once.
-
-> **To make Pro live, configure it in the Play Console** (see `PLAY_CONSOLE_SETUP.md`):
-> create a Managed one-time product with ID `himitsu_pro_unlock`, price it at ₹511.00, and activate it. Product ID and the free limit live in `billing/ProManager.kt`.
-
----
-
-## 🏗️ Building
-
-```bash
-export JAVA_HOME=/home/kali/jdk17
-cd /home/kali/Projects/KeepNotes
-
-# Unit tests (crypto, ciphers, markdown, checkbox toggle, version history, exporter)
-./gradlew testDebugUnitTest
-
-# Debug APK
-./gradlew assembleDebug           # -> app/build/outputs/apk/debug/app-debug.apk
-
-# Release App Bundle for Play (requires keystore.properties — see PLAY_CONSOLE_SETUP.md)
-./gradlew bundleRelease           # -> app/build/outputs/bundle/release/app-release.aab
-```
-
-**Release signing:** if a `keystore.properties` is present at the project root, `bundleRelease`/`assembleRelease` sign with that upload key; otherwise they fall back to the debug key (for local builds). Never commit the keystore or `keystore.properties`.
-
----
-
-## 📁 Project layout
-
-```
-app/src/main/java/com/s0ulsh3ll/himitsunotes/
-├── billing/        ProManager — Play Billing Pro unlock
-├── calculator/     Expression evaluator + dialog
-├── cipher/         Cipher wheel engine + UI
-├── crypto/         CryptoEngine, PinManager, AppLockManager
-├── data/           Room entities/DAOs, NoteRepository (encrypt/decrypt), PreferencesRepository
-├── export/         Markdown / plain / HTML / JSON exporters + share
-├── markdown/       Rich-text spans, parser, visual transformations
-├── media/          Media/file storage helper
-├── model/          Note, NoteBlock, RichSpan, AppPreferences, …
-├── reminder/       AlarmManager scheduling + receiver
-└── ui/             Compose screens, components, view-models, theme, navigation
-```
-
----
-
 ## 🔐 Permissions
 
 | Permission | Why |
