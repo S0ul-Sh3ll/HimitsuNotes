@@ -2,9 +2,6 @@
 
 ### A private, offline, hardware-encrypted notes app for Android — with per-note locks, an Obsidian-style tagging drawer, a built-in cipher wheel, a calculator, reminders and version history.
 
-**Package / Application ID:** `com.s0ulsh3ll.himitsunotes`
-**SDK:** `minSdk 26` (Android 8.0) · `targetSdk 35` (Android 15) · `compileSdk 35`
-**Stack:** Kotlin · Jetpack Compose (Material 3) · Room · DataStore · AndroidKeyStore · Coil · Play Billing
 
 ---
 
