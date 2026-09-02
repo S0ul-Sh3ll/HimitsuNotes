@@ -26,7 +26,7 @@
 - **File attachments** and **inline images** (with a fullscreen image viewer).
 
 ### 🏷️ Labels & tags
-- Obsidian-style `#tag` chips on each note, a left-drawer tag filter, and automatic clean-up of tags no longer used by any note.
+- `#tag` chips on each note, a left-drawer tag filter, and automatic clean-up of tags no longer used by any note.
 
 ### 🔑 Cipher Wheel
 Transform note text with classic and modern ciphers: **ROT13/Caesar, Vigenère, Atbash, Base64, XOR, Morse, Reverse,** and **AES-256-GCM password encryption** (PBKDF2). Live preview, copy, and one-tap “apply to note”.
